@@ -1,5 +1,4 @@
-# Maintainer:
-# Contributor: Rustmilian Rustmilian@proton.me
+# Maintainer: Samir von Hansen samirvonhansen2016@gmail.com
 
 _pkgname="calamares-shuzzyos"
 pkgname="$_pkgname"
@@ -28,6 +27,7 @@ makedepends=(
 _pkgsrc="calamares"
 _pkgext="tar.gz"
 source=("$_pkgname-$pkgver.$_pkgext"::"$url/archive/v$pkgver.$_pkgext")
+
 sha256sums=('45de0214f4a16095374e2ed3982032c34f0f2c2104987089152e4b928dd0548f')
 
 build() {
@@ -66,4 +66,7 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
+
+  install -d "$pkgdir/etc/calamares"
+  cp -r "../calamares/." "$pkgdir/etc/calamares/"
 }

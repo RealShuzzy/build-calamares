@@ -1,1 +1,1 @@
-rm -rf {pkg,src,calamares*,*.pkg.tar.zst}
+rm -rf {pkg,src,calamares-*}
